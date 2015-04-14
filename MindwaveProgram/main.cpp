@@ -85,7 +85,7 @@ int main(void) {
 	*       them.  On Mac OS X, COM ports are named like
 	*       "/dev/tty.MindSet-DevB-1".
 	*/
-	comPortName = "\\\\.\\COM5";
+	comPortName = "\\\\.\\COM3";
 	errCode = TG_Connect(connectionId,
 		comPortName,
 		TG_BAUD_57600,
@@ -126,7 +126,7 @@ int main(void) {
 					beta[count] = (int)(TG_GetValue(connectionId, TG_DATA_BETA1) + TG_GetValue(connectionId, TG_DATA_BETA2));
 					theta[count] = (int)TG_GetValue(connectionId, TG_DATA_THETA);
 					r = (double)(alpha[count] / ALPHARANGE + theta[count] / THETARANGE) / (beta[count] / BETARANGE);
-					cout << currTimeStr << endl;
+					cout << currTimeStr;
 					cout << '\t' << "alpha: " << alpha[count] << '\t' << "beta: " << beta[count]
 						<< '\t' << "theta: " << theta[count] << '\t' << "r: " << r << endl;
 					fflush(stdout);
